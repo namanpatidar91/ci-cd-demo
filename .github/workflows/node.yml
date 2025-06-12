@@ -1,24 +1,24 @@
-name: CI/CD for Nodejs app
+name: CI/CD for Node.js App
 
 on:
-   push:
-       branches: [main]
+  push:
+    branches: [main]
 
-jobs: 
-   test_and_build:
-       runs_on:ubuntu-latest
+jobs:
+  test_and_build:
+    runs-on: ubuntu-latest
 
-       steps: 
-         - name: checkout code
-           uses: actions/checkout@v3
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
 
-         - name: 🔧 Setup Node.js
-           uses: actions/setup-node@v3
-           with:
-            node-version: '18'
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-         - name: 📦 Install dependencies
-           run: npm install
+      - name: 📦 Install dependencies
+        run: npm install
 
-         - name: 📦 Install dependencies
-           run: npm install
+      - name: 🧪 Run tests
+        run: npm test
