@@ -1,3 +1,5 @@
+import cors from "cors";
+
 // index.js
 function add(a, b) {
   return a + b;
